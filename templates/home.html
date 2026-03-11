@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Главная страница</h1>
+
+<p>Всего рассылок: {{ total_mailings }}</p>
+<p>Активных рассылок: {{ active_mailings }}</p>
+<p>Получателей: {{ recipients_count }}</p>
+
+<a href="{% url 'mailing_list' %}">Рассылки</a>
+<a href="{% url 'recipient_list' %}">Получатели</a>
+<a href="{% url 'message_list' %}">Сообщения</a>
+
+{% endblock %}
