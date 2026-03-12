@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Рассылки</h2>
+
+<a class="btn btn-success"
+   href="{% url 'mailing_create' %}">
+    Создать
+</a>
+
+<table class="table mt-3">
+
+<tr>
+    <th>ID</th>
+    <th>Статус</th>
+</tr>
+
+{% for m in object_list %}
+
+<tr>
+
+<td>{{ m.id }}</td>
+
+<td>{{ m.status }}</td>
+
+<td>
+<a class="btn btn-sm btn-primary"
+   href="{% url 'mailing_detail' m.id %}">
+    Открыть
+</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

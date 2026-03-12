@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Попытки отправки</h2>
+
+<table class="table">
+
+<tr>
+<th>ID</th>
+<th>Статус</th>
+<th>Время</th>
+</tr>
+
+{% for a in object_list %}
+
+<tr>
+
+<td>{{ a.id }}</td>
+
+<td>{{ a.status }}</td>
+
+<td>{{ a.attempt_time }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

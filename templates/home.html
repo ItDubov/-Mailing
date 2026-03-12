@@ -4,12 +4,62 @@
 
 <h1>Главная страница</h1>
 
-<p>Всего рассылок: {{ total_mailings }}</p>
-<p>Активных рассылок: {{ active_mailings }}</p>
-<p>Получателей: {{ recipients_count }}</p>
+<div class="row">
 
-<a href="{% url 'mailing_list' %}">Рассылки</a>
-<a href="{% url 'recipient_list' %}">Получатели</a>
-<a href="{% url 'message_list' %}">Сообщения</a>
+    <div class="col-md-4">
+
+        <div class="card p-3">
+
+            <h5>Всего рассылок</h5>
+
+            <h2>{{ total_mailings }}</h2>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card p-3">
+
+            <h5>Активные</h5>
+
+            <h2>{{ active_mailings }}</h2>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card p-3">
+
+            <h5>Получатели</h5>
+
+            <h2>{{ recipients_count }}</h2>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<hr>
+
+<a class="btn btn-primary"
+   href="{% url 'mailing_list' %}">
+    Рассылки
+</a>
+
+<a class="btn btn-primary"
+   href="{% url 'recipient_list' %}">
+    Клиенты
+</a>
+
+<a class="btn btn-primary"
+   href="{% url 'message_list' %}">
+    Сообщения
+</a>
 
 {% endblock %}

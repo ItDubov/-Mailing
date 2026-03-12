@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Создать сообщение{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Создать сообщение</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div class="mb-3">
+            <label for="id_subject" class="form-label">Тема</label>
+            <input type="text" name="subject" class="form-control" id="id_subject" value="{{ form.subject.value|default_if_none:'' }}">
+            {{ form.subject.errors }}
+        </div>
+        <div class="mb-3">
+            <label for="id_body" class="form-label">Текст сообщения</label>
+            <textarea name="body" class="form-control" id="id_body">{{ form.body.value|default_if_none:'' }}</textarea>
+            {{ form.body.errors }}
+        </div>
+        <button type="submit" class="btn btn-success">Создать</button>
+        <a href="{% url 'message_list' %}" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>
+{% endblock %}

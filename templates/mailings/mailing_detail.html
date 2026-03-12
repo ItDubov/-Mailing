@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Рассылка {{ object.id }}</h2>
+
+<p>
+Статус: {{ object.status }}
+</p>
+
+<p>
+Начало: {{ object.start_time }}
+</p>
+
+<p>
+Конец: {{ object.end_time }}
+</p>
+
+<a class="btn btn-primary"
+   href="{% url 'mailing_update' object.id %}">
+    Редактировать
+</a>
+
+<a class="btn btn-danger"
+   href="{% url 'mailing_delete' object.id %}">
+    Удалить
+</a>
+
+{% endblock %}

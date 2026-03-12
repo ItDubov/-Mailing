@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h2>Создание / редактирование рассылки</h2>
+<h2>Вход</h2>
 
 <form method="post">
 
@@ -10,10 +10,14 @@
 
     {{ form.as_p }}
 
-    <button type="submit" class="btn btn-success">
-        Сохранить
+    <button class="btn btn-primary">
+        Войти
     </button>
 
 </form>
+
+<a href="{% url 'register' %}">
+Регистрация
+</a>
 
 {% endblock %}
