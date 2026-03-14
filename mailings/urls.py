@@ -14,6 +14,7 @@ from .views import (
     MessageCreateView,
     MessageUpdateView,
     MessageDeleteView,
+    AttemptListView
 )
 
 urlpatterns = [
@@ -47,4 +48,9 @@ urlpatterns = [
     path('messages/create/', MessageCreateView.as_view(), name='message_create'),
     path('messages/<int:pk>/update/', MessageUpdateView.as_view(), name='message_update'),
     path('messages/<int:pk>/delete/', MessageDeleteView.as_view(), name='message_delete'),
+    path(
+    "attempts/",
+    AttemptListView.as_view(),
+    name="attempt_list",
+),
 ]
