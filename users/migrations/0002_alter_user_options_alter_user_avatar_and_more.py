@@ -12,26 +12,39 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name='user',
-            options={'verbose_name': 'Пользователь', 'verbose_name_plural': 'Пользователи'},
+            options={'verbose_name': 'Пользователь',
+                     'verbose_name_plural':
+                         'Пользователи'},
         ),
         migrations.AlterField(
             model_name='user',
             name='avatar',
-            field=models.ImageField(blank=True, null=True, upload_to='avatars/', verbose_name='Аватар'),
+            field=models.ImageField(blank=True,
+                                    null=True,
+                                    upload_to='avatars/',
+                                    verbose_name='Аватар'),
         ),
         migrations.AlterField(
             model_name='user',
             name='country',
-            field=models.CharField(blank=True, max_length=100, null=True, verbose_name='Страна'),
+            field=models.CharField(blank=True,
+                                   max_length=100,
+                                   null=True,
+                                   verbose_name='Страна'),
         ),
         migrations.AlterField(
             model_name='user',
             name='email',
-            field=models.EmailField(max_length=254, unique=True, verbose_name='Email'),
+            field=models.EmailField(max_length=254,
+                                    unique=True,
+                                    verbose_name='Email'),
         ),
         migrations.AlterField(
             model_name='user',
             name='phone',
-            field=models.CharField(blank=True, max_length=20, null=True, verbose_name='Телефон'),
+            field=models.CharField(blank=True,
+                                   max_length=20,
+                                   null=True,
+                                   verbose_name='Телефон'),
         ),
     ]

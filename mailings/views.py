@@ -158,6 +158,7 @@ class MessageDeleteView(LoginRequiredMixin, DeleteView):
     def get_queryset(self):
         return Message.objects.filter(owner=self.request.user)
 
+
 class AttemptListView(LoginRequiredMixin, ListView):
     model = Attempt
     template_name = "mailings/attempt_list.html"
